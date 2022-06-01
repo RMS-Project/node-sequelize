@@ -55,13 +55,24 @@ npx sequelize db:migrate
 Desfazer uma migração (Apaga todos os dados)
 
 ```
-npx sequelize db:migrate:indo
+npx sequelize db:migrate:undo
 ```
 
 Desfazer todas as migrações. 
 
 ```
-npx sequelize db:migrate:indoAll
+npx sequelize db:migrate:undoAll
 ```
+
+Instalar extensão do Vs Code - Thunder Client -> Que cria soliciações rest como o postman
+
+Instalação do bcryptjs para criptografar a senha antes de cadastrar no banco
+
+Instalar o JWT
+```
+yarn add jsonwebtoken
+```
+
+Gerar hash MD5 - www.md5.cz
 
 Rochetseat - https://www.youtube.com/watch?v=Fbu7z5dXcRs
