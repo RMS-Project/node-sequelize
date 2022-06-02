@@ -46,6 +46,13 @@ Fazer o mesmo para username, caso seu usuário seja postgrers.
 "username": "postgres",
 ```
 
+Criar migração do sequelize do banco de dados.
+OBS: name recebe o nome da migration.
+```
+npx sequelize migration:create --name=create-files
+```
+Faça as alterações na migration e depois execute.
+
 Executar migration.
 
 ```
@@ -64,6 +71,18 @@ Desfazer todas as migrações.
 npx sequelize db:migrate:undoAll
 ```
 
+Caso esteja usnado instalação fisica do PostgresQL, apartir do pgadmin use os sequintes comandos SQL para visualizar as tabelas:
+```
+SELECT table_name FROM information_schema.tables WHERE table_schema = 'public';
+
+select * from users
+
+select * from files
+```
+OBS: O primeiro lista todas as tabelas do banco de dados "sistema".
+
+<h2>Criar requisições para a API Backend</h2>
+
 Instalar extensão do Vs Code - Thunder Client -> Que cria soliciações rest como o postman
 
 Instalação do bcryptjs para criptografar a senha antes de cadastrar no banco
@@ -76,6 +95,11 @@ yarn add jsonwebtoken
 Instalação do Yup para validações.
 ```
 yarn add yup
+```
+
+Instalação do Multer que é um multiform form data, permitindo o upload de imagens.
+```
+yarn multer
 ```
 
 Gerar hash MD5 - www.md5.cz

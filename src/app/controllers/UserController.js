@@ -50,7 +50,7 @@ class UserController {
 				'oldPassword', (oldPassword, fiel) => {
 					oldPassword ? fiel.required() : fiel
 				}
-			)
+			),
 
 			confirmPassword: Yup.string().when( 'password', (password, fiel) => {
 				password ? fiel.required().oneOf([Yup.ref('password')]) : field 
@@ -61,8 +61,7 @@ class UserController {
 			return res.status(400).json({
 				message: 'Falha na validação'
 			})
-		
-
+		}
 
 		const { email, oldPassword } = req.body;
 
@@ -84,7 +83,7 @@ class UserController {
 			})
 		}
 
-		const { ud, name, provider} = await user.update(req.body);
+		const { ud, name, provider } = await user.update(req.body);
 
 		return res.json({
 			id,

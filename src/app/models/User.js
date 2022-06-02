@@ -25,6 +25,12 @@ class User extends Model {
 		return this;
 	}
 
+	static associate(models) {
+		// Pertence á - existe outros métodos além de belongsTo tem o hasOne 
+		// foreignLKey - Chave estrangeira.
+		this.belongsTo( models.File, { foreignKey: 'photo_id', as: 'photo'})
+	}
+
 	// Caso a senha e o password_hash forem iguais retorna "true".
 	checkPassword(password) {
 		return bcrybt.compare( password, this.password_hash )
