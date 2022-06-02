@@ -8,4 +8,6 @@ routes.post('/users', UserController.store);
 
 routes.post('/session', SessionController.store);
 
+routes.put('/user', UserController.update);
+
 export default routes;
