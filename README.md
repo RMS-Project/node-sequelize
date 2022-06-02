@@ -73,6 +73,11 @@ Instalar o JWT
 yarn add jsonwebtoken
 ```
 
+Instalação do Yup para validações.
+```
+yarn add yup
+```
+
 Gerar hash MD5 - www.md5.cz
 
 Rochetseat - https://www.youtube.com/watch?v=Fbu7z5dXcRs
