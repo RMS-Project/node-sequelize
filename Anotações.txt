@@ -1,0 +1,17 @@
+Instalação do Docker no Linux
+
+https://www.youtube.com/watch?v=xKzvU6pSmE4
+
+Cria micro-aplicações para serem utilizados no sistema.
+Possui portas para conectar um container no outro.
+
+Baixar container do POSTGRES
+docker run --name database -e POSTGRES_PASSWORD=DOCKER -p 5432:5432 -d postgres
+
+Ver as imagens instaladas no Docker
+- docker image ls
+
+Para executar um container é necessário utilizar o ID.
+
+Para iniciar o container do Postgres
+docker start postgres

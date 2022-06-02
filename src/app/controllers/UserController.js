@@ -9,7 +9,7 @@ class UserController {
 
 		// Não cadastra usuários com mesmo email.
 		if (userExists) {
-			return res.status(400);json({
+			return res.status(400).json({
 				error: 'Usuário já cadastrado.'
 			})
 		}
