@@ -102,6 +102,19 @@ Instalação do Multer que é um multiform form data, permitindo o upload de ima
 yarn multer
 ```
 
-Gerar hash MD5 - www.md5.cz
+<h2>Mongodb</h2>
+
+Mongodb - Banco de dados orientado a documento, normalmente JSON.
+
+Crie uma conta em: https://www.mongodb.com/
+
+Baixe o aplicativo Comppass: mongodb.com/try/donload/compass
+
+Criar um banco sistema e alterar a string de conexão do mongodb em database/index.js
+onde é "retryWrites" colocar sistema. 
+
+
+Gerar hash MD5 - https://www.md5.cz
+
 
 Rochetseat - https://www.youtube.com/watch?v=Fbu7z5dXcRs

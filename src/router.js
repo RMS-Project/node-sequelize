@@ -13,6 +13,8 @@ import FileController from './app/controllers/FileController';
 // Colaboradores
 import CollaboratorController from './app/controllers/CollaboratorController'
 import AppointmentController from './app/controllers/AppointmentController';
+import ScheduleController from './app/controllers/ScheduleController';
+import NotificationController from './app/controllers/NotificationController';
 
 const routes = new Routes();
 const upload = multer(multerConfig);
@@ -50,5 +52,13 @@ routes.get('/appointments', AppointmentController.index);
 // Rota de agendamento
 // Requer collaborator_id e date.
 routes.post('/appointments', AppointmentController.store);
+
+// Paginação de agendamentos colaboradores
+// Requer passar por queryparamets a ?page=1.. 2.. 3..
+// ou data (?date=2021-06-20T12:13:13-00:00)
+routes.get('/schedule', ScheduleController.index);
+
+// Listagem de notificações
+routes.get('/notifications', NotificationController.index)
 
 export default routes;

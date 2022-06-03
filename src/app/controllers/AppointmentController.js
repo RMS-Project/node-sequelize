@@ -1,11 +1,20 @@
 import * as Yup from 'yup';
-import { startOfHour, parseISO, isBefore } from 'date-fns';
+import { startOfHour, parseISO, isBefore, format } from 'date-fns';
+import pt from 'date-fns/locale/pt-BR';
 
 import Appointment from '../models/Appointment';
+import User from '../models/User';
+import FIle from '../models/File';
+
+import Notifications from '../schema/Notifications'
 
 class AppointmentController {
+
   // Visualizar os atendimentos.
   async index(req, res) {
+
+    // Realizar páginação 
+    const { page = 1 } = req.query;
 
     const appointments = await Appointment.findAll({
       where: { 
@@ -14,6 +23,8 @@ class AppointmentController {
       },
       order: ['date'],
       attributes: ['id', 'date'],
+      limit: 20,  // Paginação max 20.
+      offset: (page - 1) * 20, // Quantidade de compromissos por página.
       include: [
         {
           model: User,
@@ -87,6 +98,18 @@ class AppointmentController {
       user_id: req.userId,
       collaborator_id,
       date: startHour
+    })
+
+    const user = await User.findByPk(req.userId)
+    const formatDate = format(
+      startHour,
+      "'dia' dd 'de' MMMM, às' H:mm'h' ",
+      { locale: pt }
+    ) 
+
+    await Notifications.create({
+      content:`Ǹovo agendamento de ${user.name} para ${formatDate}`,
+      user: collaborator_id
     })
 
     return res.json({
