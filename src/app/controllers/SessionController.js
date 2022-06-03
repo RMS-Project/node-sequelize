@@ -33,7 +33,7 @@ class SessionController {
 		}
 
 		if(!(await user.checkPassword(password))){
-			return res.statis(401).json({ 
+			return res.status(401).json({ 
 				error: 'Senha inválida.'
 			})
 		}
