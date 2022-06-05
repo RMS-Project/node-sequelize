@@ -118,3 +118,5 @@ Gerar hash MD5 - https://www.md5.cz
 
 
 Rochetseat - https://www.youtube.com/watch?v=Fbu7z5dXcRs
+
+Projeto do professor - https://github.com/mrdouglasmorais/sistemadeagendamento/blob/master/src/config/database.js

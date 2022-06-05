@@ -13,7 +13,7 @@ class AppointmentController {
   // Visualizar os atendimentos.
   async index(req, res) {
 
-    // Realizar páginação 
+    // Realizar paginação 
     const { page = 1 } = req.query;
 
     const appointments = await Appointment.findAll({

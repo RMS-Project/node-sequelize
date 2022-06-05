@@ -54,11 +54,17 @@ routes.get('/appointments', AppointmentController.index);
 routes.post('/appointments', AppointmentController.store);
 
 // Paginação de agendamentos colaboradores
-// Requer passar por queryparamets a ?page=1.. 2.. 3..
+// Requer passar por query parameters a ?page=1.. 2.. 3..
 // ou data (?date=2021-06-20T12:13:13-00:00)
 routes.get('/schedule', ScheduleController.index);
 
+// Marcar como lida
+// Requer ID por query parameters.
+// Basta apenas adicionar o id sem a necessidade de definir uma chave
+// Ex: localhost:3333/notifications/lkfsdpjfupnojvasdfsafd.
+routes.put('/notifications/:id', NotificationController.update);
+
 // Listagem de notificações
-routes.get('/notifications', NotificationController.index)
+routes.get('/notifications', NotificationController.index);
 
 export default routes;
